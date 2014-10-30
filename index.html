@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="" />
+<title>Document</title>
+</head>
+<body>
+<select name="" id="select">
+	<option value="#slt1">첫번째 게시물</option>
+	<option value="#slt2">두번째 게시물</option>
+	<option value="#slt3">세번째 게시물</option>
+</select>
+<button>검색</button>
+
+<!-- 컨텐츠 :: START -->
+<div id="selectCont">
+	<div id="slt1">
+		첫번째 내용
+	</div>
+	<div id="slt2" style="display:none;">
+		두번째 내용
+	</div>
+	<div id="slt3" style="display:none;">
+		세번째 내용
+	</div>
+</div>
+<!-- 컨텐츠 :: END -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("button").click(function(){
+			var id = $("#select >option:selected").val();
+			$("#selectCont > div").hide();
+			$("#selectCont").find(id).show();
+			//value 값이 url일 때, window.open($("#select > option").val());
+		});
+	});
+</script>
+</body>
+</html>
